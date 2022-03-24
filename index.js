@@ -1,18 +1,17 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const port = 3000;
 
 app.use(cors());
-const jsonParser = bodyParser.json()
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
+const jsonParser = bodyParser.json();
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
-app.post('/test', urlencodedParser, (req, res) => {
+app.post('/test', jsonParser, (req, res) => {
     console.log(req.body);
     res.json({msg: 'This is CORS-enabled for an allowed domain. POST'})
 })
