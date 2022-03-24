@@ -6,14 +6,11 @@ const port = 3000;
 app.use(cors());
 
 app.get('/', (req, res) => {
-    console.log(req);
-    console.log(res);
     res.send('Hello World!');
 })
 
 app.post('/test', (req, res) => {
-    console.log(req);
-    console.log(res);
+    console.log(req.body);
     res.json({msg: 'This is CORS-enabled for an allowed domain. POST'})
 })
 
