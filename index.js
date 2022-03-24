@@ -5,13 +5,14 @@ const bodyParser = require('body-parser');
 const port = 3000;
 
 app.use(cors());
-const jsonParser = bodyParser.json();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
-app.post('/test', jsonParser, (req, res) => {
+app.post('/test', (req, res) => {
     console.log(req.body);
     res.json({msg: 'This is CORS-enabled for an allowed domain. POST'})
 })
