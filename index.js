@@ -17,6 +17,6 @@ app.post('/test', (req, res) => {
     res.json({msg: 'This is CORS-enabled for an allowed domain. POST'})
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Example app listening on port ${port}`)
 })
