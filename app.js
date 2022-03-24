@@ -8,7 +8,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     console.log(req);
     console.log(res);
-    res.json({msg: 'This is CORS-enabled for an allowed domain.GET'})
+    res.send('Hello World!');
 })
 
 app.post('/test', (req, res) => {
